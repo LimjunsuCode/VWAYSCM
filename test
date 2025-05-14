@@ -1,1 +1,12 @@
+import sympy as sp
 
+def calculate_expression(expression):
+    try:
+        result = sp.sympify(expression)
+        return result
+    except Exception as e:
+        return f"오류 발생: {e}"
+
+print("수식 계산기입니다.")
+expression = input("계산할 수식을 입력하세요 (예: 3*x + 2*x**2, sin(x)): ")
+print(f"결과: {calculate_expression(expression)}")
